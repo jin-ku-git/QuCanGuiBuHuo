@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.youwu.qucanguibuhuo.ui.main.scan_open.GroupListViewModel" />
+
+        <variable
+            name="viewModel"
+            type="GroupListViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_grey_50"/>
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_45dp"
+            android:background="@drawable/bg_white_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/fanhui_img_30dp"
+                android:layout_height="@dimen/fanhui_img_30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_10dp"
+                android:padding="@dimen/size_5dp"
+                android:src="@mipmap/fanhui"
+                binding:onClickCommand="@{viewModel.FinishOnClick}" />
+
+            <TextView
+                android:id="@+id/text_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="团购存货"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/size_16dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_layout"
+            android:layout_above="@+id/bottom_layout"
+            android:background="@color/md_grey_50"
+            android:orientation="vertical">
+
+
+            <com.scwang.smartrefresh.layout.SmartRefreshLayout
+                android:id="@+id/smartrefreshlayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/size_10dp"
+                android:layout_marginEnd="@dimen/size_10dp"
+                android:layout_weight="1">
+
+                <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                    style="@style/RefreshStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/size_50dp" />
+
+                <androidx.core.widget.NestedScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:overScrollMode="never">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/sell_order_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:overScrollMode="never"
+                            binding:itemBinding="@{viewModel.itemBinding}"
+                            binding:items="@{viewModel.TGOrderList}"
+                            binding:layoutManager="@{LayoutManagers.typeHCount_1()}"
+                            binding:lineManager="@{LineManagers.vertical()}" />
+
+                    </LinearLayout>
+                </androidx.core.widget.NestedScrollView>
+
+                <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                    style="@style/RefreshStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp" />
+            </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/bottom_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="@dimen/size_15dp"
+            android:layout_marginTop="@dimen/size_15dp"
+            android:orientation="horizontal"
+            >
+            <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+                android:id="@+id/btScan"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/login_bg"
+                android:gravity="center"
+                android:text="扫码补货"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                binding:onClickCommand="@{viewModel.sweepOnClick}"/>
+            <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+                android:id="@+id/tvSave"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:background="@drawable/login_bg"
+                android:gravity="center"
+                android:text="完成存货"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:layout_weight="1"
+                binding:onClickCommand="@{viewModel.completeOnClick}"/>
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

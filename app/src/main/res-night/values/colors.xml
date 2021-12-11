@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary_night">@color/themeColor</color>
+    <color name="colorPrimaryDark_night">@color/themeColor</color>
+    <color name="colorAccent_night">@color/themeColor</color>
+
+    <color name="textColor_night">#202020</color>
+    <color name="textColorHint_night">#A0A0A0</color>
+    <color name="textColorVice_night">#6C6C6C</color>
+    <color name="viewLineColor_night">#F0F0F0</color>
+
+
+    <color name="orangeColor_800_night">#F05721</color>
+    <color name="themeColor_night">#FA6400</color>
+    <color name="main_white_night">#FFFFFF</color>
+    <color name="main_black_night">#000000</color>
+
+    <!--黑色-各种等级透明度-->
+    <color name="black_alpha10_night">#1a000000</color>
+    <color name="black_alpha15_night">#26000000</color>
+    <color name="black_alpha20_night">#33000000</color>
+    <color name="black_alpha30_night">#4d000000</color>
+    <color name="black_alpha32_night">#52000000</color>
+    <color name="black_alpha40_night">#66000000</color>
+    <color name="black_alpha5_night">#0d000000</color>
+    <color name="black_alpha50_night">#80000000</color>
+    <color name="black_alpha54_night">#89000000</color>
+    <color name="black_alpha60_night">#99000000</color>
+    <color name="black_alpha80_night">#cc000000</color>
+    <color name="black_2f2f2f_night">#2F2F2F</color>
+    <color name="black_222222_night">#222222</color>
+
+    <color name="md_black_1000_night">#03A9F4</color>
+    <!--reds-->
+    <color name="md_red_50_night">#fde0dc</color>
+    <color name="md_red_100_night">#f9bdbb</color>
+    <color name="md_red_200_night">#f69988</color>
+
+
+    <color name="viewfinder_mask_night">#60000000</color>
+    <color name="result_view_night">#B0000000</color>
+    <color name="viewfinder_frame_night">#90FFFFFF</color>
+    <color name="result_point_color_night">#C0FFFF00</color>
+    <color name="laser_color_night">#0F0</color>
+    <color name="corner_color_night">#00FF00</color>
+
+    <color name="check_bg_night">#f2f2f2</color>
+    <color name="order_hui_night">#ff6d7278</color>
+    <color name="order_huang_night">#FFF4ED</color>
+
+    <!-- new -->
+    <color name="c_333333_night">#333333</color>
+
+    <color name="c_d8d3cf_night">#d8d3cf</color>
+
+    <color name="white_night">#ffffff</color>
+
+    <color name="c_a59a93_night">#a59a93</color>
+
+    <!--pressed-->
+    <color name="c_b9afa9_night">#b9afa9</color>
+
+    <color name="c_c35b3a_night">#c35b3a</color>
+
+    <color name="c_9d472c_night">#9d472c</color>
+
+    <color name="color_gray_3_night">#5D646E</color>
+    <color name="dividerColor_night">#E5E5E5</color>
+    <color name="blue_03A9F4_night">#03A9F4</color>
+    <color name="grey_E1E1E1_night">#E1E1E1</color>
+    <color name="shimmerColor_night">#90fcfcfc</color>
+    <color name="qmui_config_color_red_night">#FA3A3A</color>
+</resources>

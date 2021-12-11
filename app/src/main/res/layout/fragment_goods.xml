@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.youwu.qucanguibuhuo.ui.main.scan_open.fragment.GoodsViewModel" />
+
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="GoodsViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+
+    </data>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|left"
+        android:orientation="vertical"
+        android:background="@color/md_grey_50"
+        android:padding="@dimen/size_10dp">
+
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartrefreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        style="@style/RefreshStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            binding:itemBinding="@{viewModel.itemBinding}"
+            binding:items="@{viewModel.OrderList}"
+            binding:layoutManager="@{LayoutManagers.typeHCount_1()}"
+            binding:lineManager="@{LineManagers.vertical()}"
+            android:overScrollMode="never"
+            />
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            style="@style/RefreshStyle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+    </LinearLayout>
+</layout>

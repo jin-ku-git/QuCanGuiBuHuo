@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal">
+
+    <FrameLayout
+        android:id="@+id/layout_system"
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="#7A7A7A">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:ems="1"
+            android:gravity="center"
+            android:maxEms="1"
+            android:text="系统输入法"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </FrameLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recy_view"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="3.5"
+        android:background="#888888"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        tools:itemCount="12"
+        app:spanCount="3"
+        android:overScrollMode="never"
+        tools:listitem="@layout/in_item_keybords" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="match_parent"
+        android:background="#7A7A7A"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:id="@+id/layout_del"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="删除"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+             />
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_weight="3"
+            android:background="@color/qmui_config_color_red"
+            android:id="@+id/btn_confirm"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:ems="1"
+                android:gravity="center"
+                android:maxEms="1"
+                android:text="确定"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>

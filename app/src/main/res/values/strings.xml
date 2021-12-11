@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">取餐柜补货</string>
+
+
+    <string name="address">位置：</string>
+
+    <!-- 取餐柜预约订单 -->
+    <string name="order_number">订单号：</string>
+    <string name="order_yuyue">预约</string>
+    <string name="order_tuangou">团购</string>
+    <string name="order_yicunhuo">已存货</string>
+    <string name="order_stay_meal">待取餐</string>
+    <string name="order_breakfast_cabinet">早餐柜：</string>
+    <string name="order_commodity">订单商品：</string>
+    <string name="order_contact_information">联系方式：</string>
+    <string name="order_payment_time">支付时间：</string>
+    <string name="order_pickup_time">取货时间：</string>
+
+    <!-- 补货/清货记录 -->
+
+    <string name="bh_of_goods">补货商品：</string>
+    <string name="bh_of_number">补货数量：</string>
+    <string name="bh_paragraph">款</string>
+
+    <!-- 存货记录 -->
+    <string name="ch_stock_orders">存货订单：</string>
+    <!-- 存货详情 -->
+    <string name="ch_order_time">存货时间：</string>
+
+    <!-- 补货/清货详情 -->
+    <string name="zero">0</string>
+    <string name="number">号</string>
+    <string name="bh_goods">商品：</string>
+    <string name="clear_num">清货数量：</string>
+    <string name="actual_bh_num">实际补货数量：</string>
+
+    <!-- 开门补货/开门清货 -->
+    <string name="open_bh">开门补货</string>
+    <string name="open_qh">开门清货</string>
+    <string name="open_stock">库存：</string>
+    <string name="open_yuyue">  已预约：</string>
+
+    <!-- 设置 -->
+    <string name="set_huanfu">换肤</string>
+
+    <!-- 预约订单 -->
+    <string name="yy_order_total">共</string>
+    <string name="yy_order_num">单，预约数量</string>
+    <!-- 通用 -->
+    <string name="rmb">¥</string>
+
+</resources>

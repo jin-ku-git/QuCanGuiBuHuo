@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="com.youwu.qucanguibuhuo.ui.main.myadmin.ZCLayoutItemViewModel"/>
+
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="ZCLayoutItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="53dp"
+    android:background="@color/white"
+    android:orientation="vertical">
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8E8E8"
+        android:visibility="@{viewModel.getPosition()==0?View.VISIBLE:View.GONE}"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="52dp"
+        android:background="@{viewModel.getPosition()==0?@color/order_huang:@color/main_white}"
+        >
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E8E8E8" />
+
+        <TextView
+
+            android:layout_width="@dimen/size_100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{viewModel.entity.store_name}"
+            android:textColor="#ff2e2e2e"
+            android:lines="2"
+            android:ellipsize="end"
+            android:padding="@dimen/size_2dp"
+            android:textSize="15sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E8E8E8" />
+
+        <TextView
+
+            android:layout_width="@dimen/size_150dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{viewModel.entity.cabinet_name}"
+            android:textColor="#ff2e2e2e"
+            android:textSize="15sp"
+            android:padding="@dimen/size_2dp"/>
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E8E8E8" />
+
+        <TextView
+
+            android:layout_width="@dimen/size_100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{viewModel.entity.cabinet_lattice}"
+            android:textColor="#ff2e2e2e"
+            android:padding="@dimen/size_2dp"
+            android:textSize="15sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E8E8E8" />
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="@dimen/size_150dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{viewModel.entity.name}"
+            android:textColor="#ff2e2e2e"
+            android:lines="2"
+            android:ellipsize="end"
+            android:padding="@dimen/size_2dp"
+            android:textSize="15sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E8E8E8" />
+
+        <TextView
+            android:id="@+id/tvNum"
+            android:layout_width="@dimen/size_100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@{viewModel.entity.numbers}"
+            android:textColor="#ff2e2e2e"
+            android:padding="@dimen/size_2dp"
+            android:textSize="15sp" />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="#E8E8E8" />
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E8E8E8" />
+
+</LinearLayout>
+</layout>

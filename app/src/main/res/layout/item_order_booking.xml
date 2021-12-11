@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.youwu.qucanguibuhuo.ui.main.order_fragment.BookingRecordItemViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="BookingRecordItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_white"
+    android:padding="@dimen/size_15dp"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/size_5dp"
+    android:elevation="@dimen/size_2dp"
+    binding:onClickCommand="@{viewModel.itemClick}">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/order_number+viewModel.entity.order_number}"
+            android:layout_weight="1"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/size_16dp"
+            />
+        <TextView
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="@dimen/size_22dp"
+            android:text="@{viewModel.entity.order_type==1?@string/order_yuyue:@string/order_tuangou}"
+            android:textSize="@dimen/size_10dp"
+            android:textColor="@color/md_white_1000"
+            android:background="@drawable/jianbian_radius_blue"
+            android:gravity="center"
+            android:layout_gravity="center"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/order_breakfast_cabinet+viewModel.entity.order_cabinet}"
+                android:textColor="@color/order_hui"
+                android:textSize="@dimen/text_13sp"
+                />
+
+            <TextView
+                android:id="@+id/tvPayTime"
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/order_pickup_time+viewModel.entity.order_pickup_time}"
+                android:textColor="@color/order_hui"
+                android:textSize="@dimen/text_13sp"
+                />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

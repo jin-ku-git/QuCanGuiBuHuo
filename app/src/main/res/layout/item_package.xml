@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/tools">
+    <data>
+
+        <import type="com.youwu.qucanguibuhuo.ui.commodity.fragment.MorningItemViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="MorningItemViewModel" />
+        <import type="com.youwu.qucanguibuhuo.R" />
+    </data>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_5dp"
+    android:layout_marginTop="@dimen/size_10dp"
+    android:layout_marginRight="@dimen/size_5dp"
+    android:layout_marginLeft="@dimen/size_5dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/radius_white"
+    android:padding="@dimen/size_15dp"
+    android:elevation="@dimen/size_2dp"
+    binding:onClickCommand="@{viewModel.itemClick}">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        binding:url="@{viewModel.entity.image}"
+        android:src="@{viewModel.drawableImg}"
+       />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.package_door}"
+            android:textColor="#ff333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="@{viewModel.entity.name}"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="库存："
+                android:textColor="@color/themeColor"
+                android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tv_stock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.entity.package_stock}"
+                android:textColor="@color/themeColor"
+                android:textSize="12sp" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="已预约："
+                android:textColor="@color/themeColor"
+                android:textSize="12sp"
+                android:layout_marginLeft="@dimen/size_10dp"/>
+            <TextView
+                android:id="@+id/tv_reserve"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewModel.entity.package_reserve}"
+                android:textColor="@color/themeColor"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

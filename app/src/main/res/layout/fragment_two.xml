@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <import type="com.youwu.qucanguibuhuo.ui.main.fragment.TwoViewModel" />
+        <import type="android.view.View"/>
+
+        <variable
+            name="viewModel"
+            type="TwoViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:binding="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_grey_50">
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_45dp"
+            android:background="@drawable/bg_white_bottom"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="门店"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/size_16dp"
+                android:layout_centerInParent="true"
+                />
+        </RelativeLayout>
+
+        <com.scwang.smartrefresh.layout.SmartRefreshLayout
+            android:id="@+id/smartrefreshlayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_below="@+id/top_layout"
+            >
+
+            <com.scwang.smartrefresh.layout.header.ClassicsHeader
+                style="@style/RefreshStyle"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_50dp" />
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:overScrollMode="never">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/sell_order_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        binding:itemBinding="@{viewModel.itemBinding}"
+                        binding:items="@{viewModel.foodList}"
+                        binding:layoutManager="@{LayoutManagers.typeHCount_1()}"
+                        binding:lineManager="@{LineManagers.vertical()}"
+                        android:overScrollMode="never"
+                        />
+
+                </RelativeLayout>
+            </androidx.core.widget.NestedScrollView>
+
+            <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+                style="@style/RefreshStyle"
+                android:layout_width="match_parent"
+                android:layout_height="40dp" />
+        </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.foodList.size()==0?View.VISIBLE:View.GONE}">
+
+            <ImageView
+                android:id="@+id/iv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/null_view"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/empty_view_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="暂无内容下拉刷新"
+                android:textColor="@color/themeColor"
+                android:layout_below="@+id/iv_empty"
+                android:textSize="@dimen/size_18dp"
+                android:layout_marginTop="@dimen/size_50dp"/>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>

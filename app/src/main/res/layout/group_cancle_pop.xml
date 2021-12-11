@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:background="@drawable/radius_white_10dp"
+    android:padding="15dp">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="退款申请"
+        android:textColor="@color/black"
+        android:textSize="18sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/xian_hui_4dp"
+        android:padding="5dp">
+        <EditText
+            android:id="@+id/etRmarks"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="退款原因"
+            android:textSize="@dimen/size_16dp"
+            android:gravity="start"
+            android:background="@null" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginTop="@dimen/size_15dp"
+        >
+        <com.xuexiang.xui.widget.button.SmoothCheckBox
+            android:id="@+id/check"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            app:scb_color_checked="@color/themeColor"
+
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="回滚库存"
+            android:textSize="@dimen/size_15dp"
+            android:textColor="@color/md_black_1000"
+            android:layout_marginLeft="@dimen/size_10dp"
+
+            />
+    </LinearLayout>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="@dimen/img_20dp"
+    >
+    <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@color/white"
+
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="@drawable/radius_deep_hui"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/size_15dp"
+        android:layout_marginEnd="@dimen/size_15dp"
+        android:text="取消"/>
+    <com.xuexiang.xui.widget.alpha.XUIAlphaButton
+        android:id="@+id/submit"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:textColor="@color/white"
+
+        android:gravity="center"
+        android:textSize="18sp"
+        android:background="@drawable/radius_orange"
+        android:layout_weight="1"
+        android:layout_marginStart="@dimen/size_15dp"
+        android:layout_marginEnd="@dimen/size_15dp"
+        android:text="提交"/>
+</LinearLayout>
+
+
+
+
+
+
+</LinearLayout>

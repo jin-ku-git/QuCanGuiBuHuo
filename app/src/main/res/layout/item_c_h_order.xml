@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:roundiv="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.youwu.qucanguibuhuo.ui.main.group_buy.CHOrderDetailsItemViewModel"/>
+
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="CHOrderDetailsItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_white"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:padding="15dp">
+    <!-- 可改变四角的角度 -->
+    <com.youwu.qucanguibuhuo.utils_view.CustomRoundAngleImageView
+        android:layout_width="@dimen/size_110dp"
+        android:layout_height="@dimen/size_60dp"
+        android:src="@mipmap/logo"
+        roundiv:radius="10dp"
+        android:layout_gravity="center"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="@dimen/size_15dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="先每集团"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/size_16dp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="先每集团"
+            android:textColor="@color/order_hui"
+            android:textSize="@dimen/size_14dp"
+            android:layout_marginTop="@dimen/size_5dp"
+            />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/size_5dp"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥0.01"
+                android:textColor="@color/themeColor"
+                android:textSize="@dimen/size_15dp"
+
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="x1"
+                android:textColor="@color/themeColor"
+                android:textSize="@dimen/size_15dp"
+                android:layout_alignParentRight="true"
+
+                />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/tools">
+    <data>
+
+        <import type="com.youwu.qucanguibuhuo.ui.main.fragment.TwoItemViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="TwoItemViewModel" />
+        <import type="com.youwu.qucanguibuhuo.R" />
+    </data>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="13dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginRight="13dp"
+    android:layout_marginBottom="5dp"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:background="@drawable/radius_white"
+    android:padding="15dp"
+    android:elevation="@dimen/size_2dp"
+    binding:onClickCommand="@{viewModel.itemClick}">
+
+    <ImageView
+        android:id="@+id/iv_image"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        binding:url="@{viewModel.entity.image}"
+        android:src="@{viewModel.drawableImg}"
+       />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.name}"
+            android:textColor="#ff333333"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/tv_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{@string/address+viewModel.entity.address}"
+            android:textColor="#ff666666"
+            android:textSize="12sp" />
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/xian_orange"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="5dp"
+        android:text="进入"
+        android:textColor="@color/themeColor"
+        android:textSize="@dimen/size_15dp"
+        binding:onClickCommand="@{viewModel.itemClick}"/>
+</LinearLayout>
+</layout>

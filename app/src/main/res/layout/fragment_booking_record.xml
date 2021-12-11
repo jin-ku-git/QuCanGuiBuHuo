@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.youwu.qucanguibuhuo.ui.main.order_fragment.BookingRecordViewModel" />
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="BookingRecordViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+
+    </data>
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="top|left"
+        android:orientation="vertical"
+        android:background="@color/md_grey_50"
+        android:padding="10dp">
+    <com.scwang.smartrefresh.layout.SmartRefreshLayout
+        android:id="@+id/smartrefreshlayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1">
+
+    <com.scwang.smartrefresh.layout.header.ClassicsHeader
+        style="@style/RefreshStyle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/size_50dp" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:overScrollMode="never">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            binding:itemBinding="@{viewModel.itemBinding}"
+            binding:items="@{viewModel.OrderList}"
+            binding:layoutManager="@{LayoutManagers.typeHCount_1()}"
+            binding:lineManager="@{LineManagers.vertical()}"
+            android:overScrollMode="never"
+            />
+
+    </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+        <com.scwang.smartrefresh.layout.footer.ClassicsFooter
+            style="@style/RefreshStyle"
+            android:layout_width="match_parent"
+            android:layout_height="40dp" />
+    </com.scwang.smartrefresh.layout.SmartRefreshLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="vertical"
+            android:visibility="@{viewModel.OrderList.size()==0?View.VISIBLE:View.GONE}">
+
+            <ImageView
+                android:id="@+id/iv_empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/null_view"
+                android:layout_centerInParent="true"/>
+
+            <TextView
+                android:id="@+id/empty_view_message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="暂无内容下拉刷新"
+                android:textColor="@color/themeColor"
+                android:layout_below="@+id/iv_empty"
+                android:textSize="@dimen/size_18dp"
+                android:layout_marginTop="@dimen/size_50dp"/>
+
+        </RelativeLayout>
+    </RelativeLayout>
+</layout>

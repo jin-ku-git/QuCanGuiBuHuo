@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:binding="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="com.youwu.qucanguibuhuo.ui.main.group_buy.TGOrderViewModel" />
+
+        <variable
+            name="viewModel"
+            type="TGOrderViewModel" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LayoutManagers" />
+
+        <import type="me.goldze.mvvmhabit.binding.viewadapter.recyclerview.LineManagers" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/md_white_1000">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/md_grey_50"/>
+
+        <RelativeLayout
+            android:id="@+id/top_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/size_45dp"
+            android:background="@drawable/bg_white_bottom"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="@dimen/fanhui_img_30dp"
+                android:layout_height="@dimen/fanhui_img_30dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/size_10dp"
+                android:padding="@dimen/size_5dp"
+                android:src="@mipmap/fanhui"
+                binding:onClickCommand="@{viewModel.FinishOnClick}" />
+
+            <TextView
+                android:id="@+id/text_top"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="团购订单"
+                android:textColor="@color/md_black_1000"
+                android:textSize="@dimen/size_16dp" />
+
+            <ImageView
+                android:id="@+id/img_title_right"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="25dp"
+                android:src="@mipmap/sousuo"
+                android:visibility="visible"
+                binding:onClickCommand="@{viewModel.SouSuoOnClick}" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/top_layout"
+            android:background="@color/md_grey_50"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_45dp"
+                android:orientation="horizontal"
+                android:layout_marginStart="@dimen/size_15dp"
+                android:layout_marginEnd="@dimen/size_15dp"
+                >
+                <TextView
+                    android:id="@+id/tv_store"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/lower"
+                    android:drawablePadding="8dp"
+                    android:text="全部门店"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:lines="2"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/size_14dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/size_10dp"
+                    android:layout_marginEnd="@dimen/size_10dp"
+                    binding:onClickCommand="@{viewModel.store_onClick}"
+                    android:layout_marginRight="@dimen/size_5dp"/>
+                <View
+                    android:layout_width="@dimen/size_1dp"
+                    android:layout_height="@dimen/img_20dp"
+                    android:background="@color/md_grey_300"
+                    android:layout_gravity="center"
+                    />
+                <TextView
+                    android:id="@+id/tv_cabinet"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:drawableRight="@drawable/lower"
+                    android:drawablePadding="8dp"
+                    android:text="全部柜子"
+                    android:gravity="center"
+                    android:textColor="#000"
+                    android:lines="2"
+                    android:ellipsize="end"
+                    android:textSize="@dimen/size_14dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="@dimen/size_10dp"
+                    android:layout_marginEnd="@dimen/size_10dp"
+                    binding:onClickCommand="@{viewModel.cabinet_onClick}"
+                    android:layout_marginRight="@dimen/size_5dp"/>
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_0_5dp"
+                android:background="@color/md_grey_200"
+                />
+            <LinearLayout
+                android:id="@+id/xuanze_layout"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_48dp"
+
+                android:gravity="center">
+
+
+                <com.youwu.qucanguibuhuo.utils_view.TimeSelectView
+                    android:id="@+id/time_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    />
+
+            </LinearLayout>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/size_0_5dp"
+                android:background="@color/md_grey_200"
+                />
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/md_grey_50"
+
+                app:tabSelectedTextColor="#FA6400"
+                app:tabTextColor="#B3B9C6"
+
+                app:tabIndicator="@drawable/shape_indicator_radius"
+                app:tabIndicatorColor="#FA6400"
+                android:layout_gravity="center"
+                app:tabIndicatorFullWidth="false"
+
+                app:tabTextAppearance="@style/TabLayoutTextStyle"
+                app:tabIndicatorHeight="2dp"
+                app:tabContentStart="20dp"
+                app:tabMaxWidth="0dp"
+                app:tabPaddingStart="10dp"
+                app:tabPaddingEnd="10dp"
+                app:tabMode="scrollable"
+             />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F0F0F0" />
+
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/viewPager"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:overScrollMode="never"/>
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>

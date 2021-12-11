@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.youwu.qucanguibuhuo.ui.main.group_buy.CHRecordItemViewModel"/>
+
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="CHRecordItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_white"
+    android:orientation="vertical"
+    android:padding="15dp"
+    android:layout_marginLeft="@dimen/size_5dp"
+    android:layout_marginRight="@dimen/size_5dp"
+    android:layout_marginBottom="@dimen/size_5dp"
+    android:layout_marginTop="@dimen/size_10dp"
+    android:elevation="@dimen/size_2dp"
+    binding:onClickCommand="@{viewModel.itemClick}"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/cabinet_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.order_cabinet}"
+            android:layout_weight="1"
+            android:textColor="#ff000000"
+            android:textSize="@dimen/text_15sp"
+            />
+
+        <TextView
+            android:id="@+id/create_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.order_ch_order_time}"
+            android:textColor="#ff6d7278"
+            android:textSize="@dimen/text_13sp"
+            android:layout_gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:orientation="horizontal">
+        <TextView
+            android:id="@+id/total_actual_num"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/ch_stock_orders+viewModel.entity.order_ch_order_number}"
+            android:textColor="#ff6d7278"
+            android:textSize="@dimen/text_13sp"
+            android:layout_weight="1"
+            />
+
+        <TextView
+            android:clickable="false"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="查看详情"
+            android:background="@drawable/xian_orange_4dp"
+
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="#fff95731"
+            android:textSize="12sp"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>

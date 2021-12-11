@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.youwu.qucanguibuhuo.ui.sousuo.SouSuoTGItemViewModel"/>
+
+        <variable
+            name="viewModel"
+            type="SouSuoTGItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_white"
+    android:padding="@dimen/size_15dp"
+    android:orientation="vertical"
+    android:layout_marginLeft="@dimen/size_3dp"
+    android:layout_marginRight="@dimen/size_3dp"
+    android:layout_marginBottom="@dimen/size_5dp"
+    android:layout_marginTop="@dimen/size_10dp"
+    android:elevation="@dimen/size_2dp"
+    binding:onClickCommand="@{viewModel.itemClick}">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/order_number+viewModel.entity.order_number}"
+            android:layout_weight="1"
+            android:textColor="@color/md_black_1000"
+            android:textSize="@dimen/size_16dp"
+            />
+        <TextView
+            android:layout_width="@dimen/size_50dp"
+            android:layout_height="@dimen/size_22dp"
+            android:text="@string/order_tuangou"
+            android:textSize="@dimen/size_10dp"
+            android:textColor="@color/md_white_1000"
+            android:background="@drawable/jianbian_radius_blue"
+            android:gravity="center"
+            android:layout_gravity="center"
+
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvName"
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/order_breakfast_cabinet+viewModel.entity.order_cabinet}"
+                android:textColor="@color/order_hui"
+                android:textSize="@dimen/size_12dp"
+                />
+
+            <TextView
+                android:id="@+id/tvPhone"
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/order_contact_information+viewModel.entity.order_phone}"
+                android:textColor="@color/order_hui"
+                android:textSize="@dimen/size_12dp"
+                android:gravity="center"
+                android:drawablePadding="10dp"
+                android:drawableRight="@mipmap/tel_phone"
+                />
+            <TextView
+                android:layout_marginTop="7dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{@string/ch_order_time+viewModel.entity.order_ch_order_time}"
+                android:textColor="@color/order_hui"
+                android:textSize="@dimen/size_12dp"
+                />
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{@string/rmb+viewModel.entity.order_price}"
+            android:textColor="@color/themeColor"
+            android:textSize="@dimen/size_18dp"
+            />
+    </LinearLayout>
+
+
+
+</LinearLayout>
+</layout>

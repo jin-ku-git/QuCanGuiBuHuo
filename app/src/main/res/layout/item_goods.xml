@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:binding="http://schemas.android.com/apk/res-auto">
+    <data>
+        <import type="com.youwu.qucanguibuhuo.ui.main.scan_open.fragment.GoodsItemViewModel"/>
+
+        <import type="android.view.View"/>
+        <variable
+            name="viewModel"
+            type="GoodsItemViewModel" />
+    </data>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/radius_white"
+    android:padding="@dimen/size_15dp"
+    android:orientation="horizontal"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="@dimen/size_5dp"
+    android:layout_marginRight="@dimen/size_5dp"
+    android:elevation="2dp"
+    binding:onClickCommand="@{viewModel.itemClick}">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:src="@mipmap/img_zhanweitu"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/table_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.entity.order_number}"
+            android:textColor="@color/black"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/package_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@{viewModel.entity.order_name}"
+            android:textColor="#ff6b6b6b"
+            android:textSize="12sp" />
+
+        <TextView
+            android:id="@+id/tvMes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:text="@{@string/open_stock+viewModel.entity.order_bh_stock+@string/open_yuyue+viewModel.entity.order_bh_yuyue}"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/layout_right"
+        android:layout_gravity="center_vertical"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/btClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="清空库存"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:visibility="@{viewModel.entity.order_type==0?View.GONE:View.VISIBLE}"
+            android:background="@drawable/xian_orange_4dp"
+            binding:onClickCommand="@{viewModel.OpenBHClick}"/>
+
+        <TextView
+            android:id="@+id/buhuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="开门补货"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13sp"
+            android:visibility="@{viewModel.entity.order_type==0?View.VISIBLE:View.GONE}"
+            android:background="@drawable/xian_orange_4dp"
+            binding:onClickCommand="@{viewModel.OpenBHClick}"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>
+</layout>
